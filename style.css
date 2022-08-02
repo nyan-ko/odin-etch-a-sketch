@@ -1,2 +1,35 @@
+body {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+}
 
+.sketchpad-square {
+    flex: 1;
+}
 
+.sketchpad-row {
+    display: flex;
+    flex: 1;
+}
+
+.sketchpad {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    min-height: 640px;
+}
+
+.info {
+    flex: 1;
+}
+
+.empty {
+    flex: 1;
+}
+
+.section {
+    display: flex;
+    background-color: blue;
+    padding: 0px 10vw;
+}
