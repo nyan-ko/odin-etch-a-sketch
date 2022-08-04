@@ -5,31 +5,39 @@ body {
 }
 
 .sketchpad-square {
-    flex: 1;
+    flex: 1 0 auto;
+    height: auto;
+}
+
+.sketchpad-square::before {
+    content: '';
+    display: block;
+    padding-top: 100%;
 }
 
 .sketchpad-row {
-    display: flex;
+    display: inline-flex;
     flex: 1;
 }
 
 .sketchpad {
-    display: flex;
-    flex: 3;
+    display: inline-flex;
     flex-direction: column;
-    min-height: 640px;
+    flex: 1 0 auto;
+    height: auto;
 }
 
 .info {
-    flex: 1;
+    width: 100px;
 }
 
 .empty {
-    flex: 1;
+    width: 100px;
 }
 
 .section {
     display: flex;
+    justify-content: space-between;
     background-color: blue;
     padding: 0px 10vw;
 }
