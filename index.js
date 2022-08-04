@@ -32,6 +32,7 @@ function createSquares(size) {
         for (let j = 0; j < size; j++) {
             const square = document.createElement("div");
             square.classList.add("sketchpad-square");
+            square.style.backgroundColor = "white";
             attachEvents(square);
 
             row.appendChild(square);
@@ -43,6 +44,7 @@ function createSquares(size) {
 
 function attachEvents(element) {
     element.addEventListener('mouseover', onHover)
+    element.addEventListener('mouseout', onLeave);
     element.addEventListener('mousedown', onClick);
 
     element.addEventListener("dragstart", cancelDrag);
@@ -57,6 +59,13 @@ function onHover(e) {
     if (mouseDown) {
         this.style.backgroundColor = getColor();
     }
+    else {
+        this.classList.add("selected");
+    }
+}
+
+function onLeave(e) {
+    this.classList.remove("selected");
 }
 
 function cancelDrag(e) {

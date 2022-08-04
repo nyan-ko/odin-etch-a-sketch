@@ -12,7 +12,12 @@ body {
 .sketchpad-square {
     flex: 1 0 auto;
     height: auto;
-    
+    transition: 0.1s;
+}
+
+.selected {
+    transform: scale(1.2);
+    box-shadow: 2px 2px 16px -2px #121212;
 }
 
 .sketchpad-square::before {
