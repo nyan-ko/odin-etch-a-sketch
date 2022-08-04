@@ -1,4 +1,5 @@
 let mouseDown = false;
+let color = "#1e1e1e";
 
 window.addEventListener('mouseup', () => {
     mouseDown = false;
@@ -7,8 +8,17 @@ window.addEventListener('mousedown', () => {
     mouseDown = true;
 })
 
+const colorPicker = document.querySelector("#color-picker");
+colorPicker.addEventListener("input", (e) => {
+    setColor(e.target.value);
+});
+
+function setColor(clr) {
+    color = clr;
+}
+
 function getColor() {
-    return "#000000";
+    return color;
 }
 
 function createSquares(size) {
