@@ -1,3 +1,16 @@
+let mouseDown = false;
+
+window.addEventListener('mouseup', () => {
+    mouseDown = false;
+});
+window.addEventListener('mousedown', () => {
+    mouseDown = true;
+})
+
+function getColor() {
+    return "#000000";
+}
+
 function createSquares(size) {
     size = size ?? 16;
 
@@ -9,7 +22,8 @@ function createSquares(size) {
         for (let j = 0; j < size; j++) {
             const square = document.createElement("div");
             square.classList.add("sketchpad-square");
-            square.addEventListener('click', onClick);
+            attachEvents(square);
+
             row.appendChild(square);
         }
 
@@ -17,8 +31,26 @@ function createSquares(size) {
     }
 }
 
+function attachEvents(element) {
+    element.addEventListener('mouseover', onHover)
+    element.addEventListener('mousedown', onClick);
+
+    element.addEventListener("dragstart", cancelDrag);
+    element.addEventListener("drop", cancelDrag);
+}
+
 function onClick(e) {
-    this.style.backgroundColor = 'black';
+    this.style.backgroundColor = getColor();
+}
+
+function onHover(e) {
+    if (mouseDown) {
+        this.style.backgroundColor = getColor();
+    }
+}
+
+function cancelDrag(e) {
+    e.preventDefault();
 }
 
 createSquares(16);
