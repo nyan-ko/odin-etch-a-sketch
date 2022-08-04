@@ -4,9 +4,15 @@ body {
     flex-direction: column;
 }
 
+.header {
+    flex: 1;
+    text-align: center;
+}
+
 .sketchpad-square {
     flex: 1 0 auto;
     height: auto;
+    
 }
 
 .sketchpad-square::before {
@@ -23,21 +29,21 @@ body {
 .sketchpad {
     display: inline-flex;
     flex-direction: column;
-    flex: 1 0 auto;
+    flex: 3 0 auto;
     height: auto;
+    box-shadow: 2px 2px 16px -2px #808080;
 }
 
 .info {
-    width: 100px;
+    flex: 2;
 }
 
 .empty {
-    width: 100px;
+    flex: 2;
 }
 
 .section {
     display: flex;
     justify-content: space-between;
-    background-color: blue;
-    padding: 0px 10vw;
+    padding: 0px 5vw;
 }
