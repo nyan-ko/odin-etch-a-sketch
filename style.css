@@ -65,3 +65,7 @@ input[type="color" i]::-webkit-color-swatch {
 input[type="color" i]::-webkit-color-swatch-wrapper {
     padding: 0;
 }
+
+.empty {
+    flex: 1;
+}
