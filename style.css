@@ -1,7 +1,5 @@
 body {
     margin: 0px;
-    display: flex;
-    flex-direction: column;
 }
 
 .header {
@@ -40,17 +38,15 @@ body {
 }
 
 .info {
-    flex: 2;
-}
-
-.empty {
-    flex: 2;
+    flex: 1;
 }
 
 .section {
     display: flex;
-    justify-content: space-between;
-    padding: 0px 5vw;
+    justify-content: flex-start;
+    max-width: 1080px;
+    gap: 100px;
+    margin: 0 auto;
 }
 
 #color-picker {
