@@ -32,7 +32,7 @@ body {
 .sketchpad {
     display: inline-flex;
     flex-direction: column;
-    flex: 3 0 auto;
+    flex: 3;
     height: auto;
     box-shadow: 2px 2px 16px -2px #808080;
 }
@@ -50,7 +50,7 @@ body {
     height: 120px;
     border: none;
     padding: 0;
-    margin: 0 auto 40px;
+    margin: 0 auto;
 }
 
 input[type="color" i]::-webkit-color-swatch {
@@ -68,14 +68,20 @@ input[type="color" i]::-webkit-color-swatch-wrapper {
 }
 
 .brush-circle {
-    width: 80px;
-    height: 80px;
+    width: 16px;
+    height: 16px;
     background-color: black;
-    margin: 0 auto;
+    margin: 56px auto 56px;
+    transition: 0.1s;
+    color: white;
+    text-align:center;
+    line-height: 16px;
+    border-radius: 50%;
 }
 
 #brush-sizer {
     margin: 0;
+    width: 100%;
 }
 
 .empty {

@@ -21,6 +21,24 @@ function getColor() {
     return color;
 }
 
+const slider = document.querySelector("#brush-sizer");
+slider.addEventListener("input", (e) => setBrushSize(e.target.value));
+
+function setBrushSize(size) {
+    resizeCircle(size);
+}
+
+function resizeCircle(size) {
+    const circle = document.querySelector(".brush-circle");
+    size++;
+    circle.style.width = size * 8 + "px";
+    circle.style.height = size * 8 + "px";
+    circle.style.marginTop = (64 - size * 4) + "px";
+    circle.style.marginBottom = (64 - size * 4) + "px";
+    circle.style.lineHeight = size * 8 + "px";
+    circle.textContent = --size;
+}
+
 function createSquares(size) {
     size = size ?? 16;
 
